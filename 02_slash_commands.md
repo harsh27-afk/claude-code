@@ -4,6 +4,8 @@
 
 - **2 types of slash commands : built in and custome slash commands**
 
+- type / to see all /commands in terminal
+
 - Sessions :
 - A single conversation history with claude 
 - **sessions are saved automatically to ~/.claude/projects/  and can be resumed whenever u want: claude -r : on ui u will see list of session go into any u want**
@@ -30,6 +32,24 @@
 - but its incremental , not double down for every basic question asked, thats the shit in normal api calling chatbot, prompt caching and all is also used !
 
 
+---------------------------------------------------------------------------------------
+
+```markdown
+
+/resume - Select and resume a context, can also use `claude -r`
+/model - View and change models during a session
+/exit - Exit a session
+/btw - Chats not taken into context, runs parallely to current tasks
+/usage - Shows daily and weekly usage & limits
+/stats - Shows useful usage beahviour statistics
+/extra-usage - To top up when tokens run out
+/insights - Provides html to improve your workflow, current project, usage etc. Nitish recommends this after 10 to 15 sessions
+/config - Lets you tweak claude settings
+/permissions - Allow, ask or deny permissions given to claude agent, read,write, terminal access etc.
+/voice - Enable voice mode 
+
+
+```
 
 
 
