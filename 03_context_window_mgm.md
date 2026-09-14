@@ -33,7 +33,39 @@
 
 - /context : to look at current sessions context info
 
-- auto-compaction happens at 75-90 % of context window 
+
+---------------------------------------------------------------------------------------------------------------
+
+## Auto-compaction :
+
+- **once ur session`s C.W reaches 95% of 1 million limit ( for sonnet and opus ) , claude summarizes session in 33k tokens reserved , then ur C.W becomes significantly empty and starts again from system_prompt + tools + ... + 33k reserved tokens !!**
+
+- **but the o/p is pretty bad hence forth, so its better once ur session CW reaches 900k tokens, just form another .md file summarizing**
+
+- I am at 500k tokens still want to compact the session : 
+  - **command :/compact focus on keeping the auth refactor decisions and drop the file exploration**
+
+**One of the imp points below !!**
+
+- **I am at 500k tokens i ask a new question , so now 500k + new asked question tokens are sent to the llm , so is there any limit to how much i/p we can send to the LLM ?? yes the ans is C.W itself !!! u cant send more tokens at a time than the context window length !! thats the reason auto-compaction thing exists !!!**
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+- To make sure claude code does not read ur personal files like env or unneccessay bulky folder 
+  - .claude/settings.json 
+  -   {
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(secrets/**)",
+      "Read(*.pem)"
+    ]
+  }
+}
+
+
+ 
 
 
 

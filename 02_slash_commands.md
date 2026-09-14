@@ -8,7 +8,21 @@
 
 - Sessions :
 - A single conversation history with claude 
-- **sessions are saved automatically to ~/.claude/projects/  and can be resumed whenever u want: claude -r : on ui u will see list of session go into any u want**
+
+- **sessions are saved automatically to (global directory): ~/.claude/projects/  and can be resumed whenever u want: claude -r : on ui u will see list of session go into any u want**
+
+- **There are 2 locations where /.claude folders are created: global and local project root folder :**
+
+- Project .claude/ (in your repo root)
+  - Holds : CLAUDE.md, settings.json, skills, rules, agents — configuration, not history
+  - Created when : You run /init, save a local setting, add a skill, etc.
+
+- Global ~/.claude/ (in your home dir) 
+  - Holds : Your personal config + all session transcripts across every project
+  - Created When : The very first time you ever run claude on your machine
+
+  - Session History is stored at : global ~/.claude/projects/<encoded-project-path>/<session-id>.jsonl
+
 - each session has its own context window like for opus and sonnet 1 million tokens / session is the context window
 
 - rename the session, instead of first ques of session being shown :
@@ -18,8 +32,9 @@
   - /btw ur_question : ask question, it wont be part of main context window of this session 
   - press SPACE and this quick Q&A disappears
 
-- exporting the entire chat in a session within the folder u are developing project :
+- **exporting the entire chat in a session within the folder u are developing project :**
   - /export file.md : this file will be created, i can provide this files as context to some other session 
+  - This will contain the entire chat history message, it will not be the summarized context we use in Context engineering / spec driven development 
 
 - /logout and /login commands to logout and login in claude code account
 
@@ -36,7 +51,7 @@
 
 ```markdown
 
-/resume - Select and resume a context, can also use `claude -r`
+/resume - Select and resume a session, can also use `claude -r`
 /model - View and change models during a session
 /exit - Exit a session
 /btw - Chats not taken into context, runs parallely to current tasks
