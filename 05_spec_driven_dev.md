@@ -6,3 +6,11 @@
 ## Modern coding summarized :
 
 - Create a great Spec.md hand it to claude use PLAN MODE and generate the implementation plan, now keep executing this implementation plan session by session
+
+- switch to opus and use plan mode for max benefit 
+
+- /effort   low high medium max ,etc
+
+- create Feature branches, once implemented merge them to main branch and delete these branches
+
+- Plan mode : ctrl + P
